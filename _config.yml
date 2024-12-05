@@ -1,0 +1,238 @@
+# See docs folder for details on implementation
+
+## Site Settings
+
+### Site Structure
+
+baseurl: "/edition_base" # the subpath of your site
+url: "https://recoveryhub.github.io/" # should not change for Recovery Hub projects
+
+### Site Title
+
+title: Edition Base
+tagline: The RHAWW Framework in action
+
+# If the site title needs to be formatted, e.g. with italics,
+# use HTML in _includes/site_title_html.html to format the title text
+# and then remove the # at the beginning of the following line:
+# html_site_title: true
+
+### Site Description
+
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
+description: > 
+  A base edition for Recovery Hub for American Women Writers projects. TEI file display uses 
+  CETEIcean, which is distributed under a BSD 2-Clause "Simplified" License. Text and files created as 
+  part of this edition are licensed under a [your license here]. (Write 
+  a simple description for your new site here. You can edit this line in 
+  _config.yml. It will appear in your document head meta (for Google search 
+  results) and in your feed.xml site description.)
+
+### Banner image
+
+banner_image: assets/images/recovery-hub-banner.jpg
+banner_alt_text: Recovery Hub of American Women Writers with quill icon and pages of a book in the background
+banner_size: "half" # Available values: "full" (full-width) or "half". Defaults to half if left blank.
+
+### Navigation
+
+# If you want to link only specific pages in your header, use this and add the path to the pages
+# in order as they should show up.
+header_pages:
+  - "items/books/book.md"
+  - "items/periodicals/periodical.md"
+  - "items/poems/poem.md"
+  - "about.md"
+  - "docs/all-pages.html"
+
+### Contact
+
+author:
+  # "name" can contain one or multiple names and will be listed in the footer by default
+  name: PIs Gloría Kahlo and Murasaki Shikibu
+  email: recoveryhub@siue.edu
+  institution: Southern Illinois University Edwardsville
+
+### Privacy Notice
+
+privacy_notice: https://www.siue.edu/web-privacy-notice/
+
+### Social Accounts
+
+facebook_username: AWWrecoveryhub
+twitter_username: AWWRecoveryHub
+instagram_username: awwrecoveryhub
+github_username:  recoveryhub
+
+### Sponsors / Organization Logos
+
+# You can add/edit/remove sponsors below, or override the 
+# the HTML in the footer template _includes/footer.html 
+
+sponsors:
+  # copy-paste the following 4 lines for each sponsor
+  - sponsor:
+    name: Southern Illinois University Edwardsville
+    link: https://www.siue.edu/
+    logo_path: assets/images/siue.png
+
+  - sponsor:
+    name: St. Catherine University
+    link: https://www.stkate.edu/
+    logo_path: assets/images/stkate.png
+
+  - sponsor: 
+    name: National Endowment for the Humanities
+    link: https://www.neh.gov/
+    logo_path: assets/images/neh.webp
+
+  - sponsor:
+    name: The IRIS Center at SIUE
+    link: https://iris.siue.edu/
+    logo_path: assets/images/iris.png
+    
+  - sponsor: 
+    name: University of Nebraska–Lincoln
+    link: https://www.unl.edu/
+    logo_path: assets/images/unl.png
+
+# Site Setup / Defaults
+
+# If all pages in this edition have the same editor(s), you can list them here.
+# Otherwise, you can include the editor(s) in the metadata for each file.
+editor: Gloría Kahlo and Murasaki Shikibu
+
+## Categories 
+
+# Categories listed here must match the categories in defaults below. 
+# If you add a category, be sure to add it in both places.
+# We use categories instead of Jekyll's built-in collections functionality 
+# because the latter does not account for files with no headmatter.
+
+category_list: [
+  "none", 
+  "drafts", 
+  "books", 
+  "periodicals", 
+  "essays", 
+  "poems", 
+  "documentation",
+  "correspondence"
+  ]
+
+## Exclude specific categories from showing up
+
+# Once the edition is complete, if you want to exclude a category from showing up 
+# on the finished site, remove the # at the beginning of the line below and 
+# add the category's folder to the list (separated with commas and spaces). 
+# To hide documentation on the finished site, for example, the "docs" folder 
+# is listed, as is the folder where drafts are stored.
+
+# exclude: ["docs", "source/drafts"] 
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: pages
+    values:
+      layout: default
+      category: none
+  - scope:
+      path: "source/drafts"
+      type: pages
+    values:
+      layout: default
+      category: drafts
+      # This should work according to this page but does not https://talk.jekyllrb.com/t/creating-custom-permalinks-for-each-post-category/434/4
+      # permalink: draft/:title
+# Item Types
+  - scope:
+      path: "items/books"
+      type: pages
+    values:
+      layout: paginate
+      category: books
+  - scope:
+      path: "items/periodicals"
+      type: pages
+    values:
+      layout: paginate
+      category: periodicals
+  - scope:
+      path: "items/poems"
+      type: pages
+    values:
+      layout: default
+      category: poems
+# Text (TEI) Types
+  - scope:
+      path: "_texts/poems"
+      type: texts
+    values:
+      layout: tei
+      category: poems
+  - scope:
+      path: "_texts/correspondence"
+      type: texts
+    values:
+      layout: tei
+      category: correspondence
+# Paratext (Introduction, Essays, Documentation)
+  - scope:
+      path: "essays"
+      type: pages
+    values:
+      layout: default
+      category: essays
+  - scope:
+      path: "docs"
+      type: pages
+    values:
+      layout: default
+      category: documentation
+
+# To use Jekyll collections, set them up here:
+collections: 
+  texts:
+    output: true
+
+# Theme and Build settings
+
+# If you clone the Minima repo and build locally, use this setting.
+theme: minima
+
+# As of November 2023, GitHub Pages still uses Minima 2.5.1 (https://pages.github.com/versions/). 
+# If you want to use the latest Minima version on GitHub Pages, use the following setting and 
+# add a line comment on "theme: minima" above.
+#remote_theme: jekyll/minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - kramdown
+
+# Minima date format.
+# The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
+# Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+#date_format: "%b-%d-%Y"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

@@ -1,0 +1,954 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+@import "css/CETEIcean.css";
+
+// @charset "utf-8";
+
+// Set minima values and theme options in minima.scss
+
+/* see https://css-tricks.com/a-complete-guide-to-data-attributes/ for selector tips */
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap');
+$font-family-sans-serif: "Poppins", Verdana, sans-serif;
+$font-family-serif: "Lora", Georgia, serif;
+
+
+// Colors
+
+$recovery-hub-black: #231F20;
+$recovery-hub-blue: #0083AD;
+$recovery-hub-indigo: #005677; // Favicon background color
+$recovery-hub-navy: #313b48;
+// $recovery-hub-navy-dark: #28313D;
+$recovery-hub-silver: #F1F5F8; 
+$recovery-hub-silver-dark: #BCD1D7;
+$recovery-hub-teal: #49C4D3;
+
+
+// Body
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: $font-family-serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+figure,
+img {
+  border-radius: 0; // Undo minima defaults
+  margin-bottom: 0; // Undo minima defaults
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.wrapper {
+  max-width: 900px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+// Lists
+
+ul {
+  margin-left: 3rem;
+
+  @include media-query($on-palm) {
+    margin-left: 2rem;
+  }
+
+  li {
+    // margin-bottom: 1.5rem;
+  
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// TOC list - different margins
+
+#markdown-toc {
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
+
+  li {
+    margin-bottom: initial;
+  }
+}
+
+// Headings
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-serif;
+  font-weight: 500;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: $spacing-unit;
+}
+
+// Page titles 
+
+// Gray border
+.post-header {
+  margin-bottom: 0;
+}
+
+h1.post-title {
+  margin-bottom: 1.5rem;
+  padding-bottom: $spacing-unit / 1.75;
+  border-bottom: 1px solid lightgray;
+}
+
+
+/*
+// Blue underscore
+h1.post-title {
+  margin-bottom: $spacing-unit * 1.25;
+  &:after {
+    content: "";
+    background-color: $recovery-hub-blue;
+    display: block;
+    height: 4px;
+    position: relative;
+    top: $spacing-unit / 2;
+    width: $spacing-unit * 2;
+  }
+}
+*/
+
+/*
+ * Site header
+ * Overwriting minima _layout.scss
+ */
+
+.site-header {
+  background: $recovery-hub-indigo;
+  border: none;
+  font-family: $font-family-sans-serif;
+  min-height: initial; // Undo minima default
+  padding: 20px 0px 20px 5px;
+
+  .wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media-query($on-palm) {
+    .wrapper {
+      padding-right: 0;
+    }
+  }
+
+ .site-title {
+  color: #fff;
+  font-family: $font-family-serif;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: 0.25px;
+  margin-right: $spacing-unit;
+
+    &,
+    &:visited {
+      color: #fff;
+    }
+
+    @include media-query($on-palm) {
+      font-size: 20px;
+      margin-right: $spacing-unit * 2;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  .site-nav {
+    background-color: $recovery-hub-indigo;
+    border: 0;
+    flex-grow: 1;
+    font-size: 18px;
+    line-height: initial;
+    padding-top: 1px;
+    text-align: right;
+
+    .page-link {
+      color: #fff;
+      line-height: initial;
+
+      // Gaps between nav items, but not on the last one
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+
+    @include media-query($on-palm) {
+      border-radius: 0px;
+      height: 100%;
+      padding-top: 0px;
+      right: 0;
+      text-align: center;
+      top: 0;
+      
+
+      label[for="nav-trigger"] {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding: 0 20px;
+        width: auto; // Undo minima default
+      }
+
+      &:hover {
+        background-color: $recovery-hub-blue;
+      }
+
+      .menu-icon {
+        display: block;
+        float: none;
+        line-height: 0;
+        padding-top: 0;
+        text-align: initial; // Undo minima default
+
+        > svg {
+          fill: $grey-color-dark;
+        }
+      }
+
+      input ~ .trigger {
+        clear: both;
+        display: none;
+      }
+
+      input:checked ~ .trigger {
+        background-color: $recovery-hub-blue;
+        display: block;
+        text-align: center;
+        padding-bottom: 0;
+        width: 100vw;
+      }
+
+      .page-link {
+        border-top: 1px solid $recovery-hub-indigo;
+        display: block;
+        margin-left: 0;
+        padding: 20px;
+
+        &:hover {
+          background-color: $recovery-hub-indigo;
+        }
+
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// Footer
+footer {
+  background-color: $recovery-hub-navy;
+  color: $recovery-hub-silver;
+
+  h2, h3, h4, h5, h6 {
+    color: $recovery-hub-silver;
+  }
+
+  // Sponsor columns
+  .sponsor-col-wrapper {
+    align-items: center;
+    column-gap: $spacing-unit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: $spacing-unit;
+
+
+    .sponsor-logo img {
+      height: 75px;
+      max-width: none; // Undo minima default
+    }
+
+    @include media-query($on-palm) {
+      align-items: start;
+      column-gap: $spacing-unit * 2;
+      flex-wrap: wrap;
+      justify-content: start;
+      margin-bottom: $spacing-unit / 2;
+      margin-top: $spacing-unit / 2;
+
+      .sponsor-logo img {
+        height: 50px;
+      }
+    }
+
+  }
+
+  // Text columns
+
+  .footer-col-wrapper { // Change footer columns to use flexbox
+    color: $recovery-hub-silver !important;
+    column-gap: $spacing-unit;
+    display: flex;
+    font-size: $base-font-size;
+    justify-content: space-between;
+    margin-top: $spacing-unit;
+    padding: $spacing-unit / 2;
+    row-gap: $spacing-unit / 2;
+
+    @include media-query($on-palm) {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .footer-col {
+      float: none;
+      margin-bottom: 0;
+      padding: 0;
+      width: auto;
+    }
+
+    .footer-col-1 {
+      min-width: 300px;
+    }
+  }
+
+  .footer-heading {
+    color: #fff;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: underline;
+    color: #fff;
+
+    &:visited {
+      color: $recovery-hub-silver-dark;
+    }
+  }
+
+  ul {
+    li {
+      margin-bottom: 2px;
+
+      &.p-name {
+        border-bottom: 1px solid #fff;
+        font-weight: 600;
+        margin-bottom: 4px;
+        padding-bottom: 8px;
+      }
+    }
+    &.contact-list {
+      margin-bottom: 0.25rem;
+    }
+    &.privacy-notice {
+      margin-top: 1px;
+    }
+    &.social-media-list {
+      margin-top: 16px;
+    }
+  }
+
+  .svg-icon {
+    fill: #fff;
+    height: 20px;
+    padding-top: 4px;
+    width: 22px;
+  }
+}
+
+
+// Home
+
+body#index {
+  .banner-image {
+    margin: 0px -25px 30px -25px;
+  }
+  .page-content {
+    padding-top: 0;
+  }
+}
+
+.layout_home {
+  .page-content {
+    padding-top: 0;
+  }
+
+  // Full-width banner image
+  .banner-full {
+    .site-description {
+      margin-top: $spacing-unit;
+    }
+  }
+
+  // Half-width banner image 
+  .banner-half {
+    display: flex;
+    gap: $spacing-unit;
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+
+    @include media-query($on-palm) {
+      flex-direction: column;
+    }
+
+    .banner-image {
+      flex-basis: 50%;
+
+      @include media-query($on-palm) {
+        flex-basis: 100%;
+      }
+    }
+
+    .banner-text {
+      flex-basis: 50%;
+    }
+  }
+}
+
+// _layouts/pagination.html
+
+a.grayed-out {
+  color: #777;
+}
+
+.pagination-links {
+  display: flex;
+  gap: $spacing-unit / 2;
+  justify-content: space-between;
+  margin-bottom: $spacing-unit;
+  width: 100%;
+
+  .book-title {
+    margin-right: 4px;
+  }
+  
+  .separator {
+    margin-right: 4px;
+  }
+}
+
+article.chapter .post-content {
+  border-top: 1px solid $recovery-hub-silver-dark;
+  border-bottom: 1px solid $recovery-hub-silver-dark;
+  padding-top: $spacing-unit;
+
+  h1 {
+    font-size: 32px;
+  }
+}
+
+
+
+
+// TEI Styles
+
+[data-tei-a-hand-medium="black pen"] {
+  font-family: monospace;
+  background-color: cyan;
+}
+
+[data-tei-a-hand-resp="cwc"] {
+  border-bottom: double orange 3px;
+}
+
+[data-tei-a-hand-medium="blue pencil"] {
+  color: rgb(0, 125, 234);
+}
+
+/* * = contains */
+[data-tei-a-hand-medium*="blue"] {
+  color: blue;
+}
+
+/* ~ = discreet value */
+[data-tei-a-hand-medium~="pencil"] {
+  border-top: solid 2px #aaa;
+} 
+
+[data-tei-a-hand-medium]::before {
+  content: '[' attr(data-tei-a-hand-medium) '] ';
+}
+
+[data-tei-e="add"] {
+  background-color: yellow;
+}
+
+[data-tei-e="figure"],
+[data-tei-e="p"],
+[data-tei-e="fw"] {
+  display: block;
+}
+
+[data-tei-e="figure"] [data-tei-e="p"] {
+  font-weight: 800;
+}
+[data-tei-e="figure"] [data-tei-e="head"] {
+  font-size: 1.1em;
+}
+
+[data-tei-e="fw"] {
+  text-align: center;
+  background: #aaa;
+}
+
+[data-tei-e="unclear"] {
+  color: #aaa;
+}
+
+[data-tei-e="unclear"]::before {
+  content: '[';
+}
+
+[data-tei-e="unclear"]::after {
+  content: ']';
+}
+
+[data-tei-e="pb"], .page {
+  display: block;
+  /*! border: red 2px solid; */
+  text-align: center;
+  border-bottom: solid 2px #aaa;
+  margin: .5em 0;
+  background: silver;
+/*   display:none */
+  } 
+
+[data-tei-e="pb"]::before {
+  content: '[ page ' attr(data-tei-a-n) ' ] ';
+}
+
+/*  Notes on future alterations */
+
+[data-tei-e-damage] {
+  content: '[?]';
+} /* formatting adds [?] at end */
+
+.tei-list-container [data-tei-e="head"] {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+[data-tei-e="lb"] {
+  display: block;
+}
+
+[data-tei-e="epigraph"],
+[data-tei-e="docImprint"] {
+  display: block;
+}
+
+[data-tei-e="front"] > [data-tei-e="docImprint"] {
+  margin-bottom: 1em;
+}
+
+[data-tei-a-rendition="simple-centre"] {
+  text-align: center;
+  display: block;
+}
+
+[data-tei-a-rendition="simple-italic"],
+[data-tei-e="pubPlace"],
+[data-tei-e="publisher"] {
+  font-style: italic;
+}
+
+[data-tei-e="docTitle"] {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: .5em;
+  display: block;
+}
+
+[data-tei-e="titlePage"] {
+  border: solid 1px #aaa;
+  display: block;
+  padding: 1em;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+/* removing styles for top level list, adding back in for nested list */
+/* TODO THESE NEED MORE SPECIFICITY. They are picking up lists on About page *?
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
+}
+
+ul ul {
+  margin: 1em 0; 
+  padding-left: 2em;
+}
+
+/* this edition only? */
+
+[data-tei-e="docImprint"] {
+  display: block;
+  text-align: center;
+}
+
+[data-tei-a-rendition="simple-smallcaps"] {
+  font-variant: small-caps;
+}
+
+table, tr, td {
+  border: 1px #aaa solid;
+}
+
+
+.categories-listing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  h3 {
+    margin: 0
+  }
+}
+
+.category-listing {
+  flex-grow: 1;
+  min-width: 20%;
+  padding-bottom: 1rem;
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* Collapsible sections */
+
+.metadata-box details,
+.chapter-list details {
+  background-color: rgb(250,250,250);
+  border: 1px solid rgb(240,240,240);
+  margin: 10px 0;
+  padding: 10px 16px 8px 16px;
+}
+
+.about-this-edition {
+  margin-top: 0.75rem;
+}
+
+.chapter-list {
+  margin-bottom: 3rem;
+}
+
+details ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+details .details-content {
+  padding-left: 17px;
+}
+
+.post-content details summary {
+  margin: 0;
+}
+
+.metadata-box summary h2,
+.chapter-list summary h2 {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+.post-content details summary h2, 
+.post-content details h3 {
+  font-size: 1.25rem; 
+  font-weight: bold;
+}
+
+.post-content details h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Space between title and last metadata box */
+
+.periodical,
+.poem,
+.whole-book {
+  margin-top: 2rem;
+}
+
+/* Whole book page */
+
+.whole-book .book-section {
+  border-top: 1px solid rgb(220,220,220);
+  margin-top: 8rem;
+  padding-top: 8rem;
+}
+
+.whole-book .book-section:first-of-type {
+  margin-top: 3rem;
+  padding-top: 3rem;
+}
+
+.whole-book .individual-chapter-link {
+  margin: 0;
+  float: right;
+}
+
+.whole-book h1 {
+  margin-top: 0;
+}
+
+.whole-book h1 + h2 {
+  margin-top: 1rem;
+}
+
+/* Text formatting styles for poems */
+
+/*
+ ED special layouts
+*/
+
+p.centered {
+  text-align: center;
+}
+
+p.larger {
+  font-size: 1.6rem;
+}
+
+p.large {
+  font-size: 1.4rem
+}
+
+p.small {
+  font-size: 0.8rem;
+}
+
+div.poem,
+.poem,
+div.narrative,
+.narrative {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+div.toc {
+  margin-bottom: 4rem;
+}
+
+
+/*
+  Poem styles
+  If you want your lines not to wrap on small screens, add the rule "white-space: nowrap;"; If you
+  want you want to remove the hanging indent, reset the padding-left to 0 and erase text-indent
+*/
+
+.poem ul,
+.poetry ul,
+ul.poetry {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+
+/* This snippet helps us reset the margin for all spans with the indent- class */
+.poem span[class^='indent-'],
+.poetry span[class^='indent-'] {
+  margin: 0;/* reset browsers default margin styles*/
+}
+
+
+/*
+  To set line indentation for poetry wrap the line in a span with a class="indent-x" attribute.
+  The x is represents a rem (root em) value
+*/
+
+.indent-1 {
+  padding-left: 1rem;
+}
+
+.indent-2 {
+  padding-left: 2rem;
+}
+
+.indent-3 {
+  padding-left: 3rem;
+}
+
+.indent-4 {
+  padding-left: 4rem;
+}
+
+.indent-5 {
+  padding-left: 5rem;
+}
+
+.indent-6 {
+  padding-left: 6rem;
+}
+
+.indent-7 {
+  padding-left: 7rem;
+}
+
+.indent-8 {
+  padding-left: 8rem;
+}
+
+.indent-9 {
+  padding-left: 9rem;
+}
+
+.indent-10 {
+  padding-left: 10rem;
+}
+
+.poem .byline,
+.poetry .byline {
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 0;
+  margin-top: -.5rem;
+}
+
+/* Footnotes styles */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5rem;
+}
+
+h2 sup {
+  left: 0.1rem;
+  top: -0.85rem;
+}
+
+sup a {
+  font-size: 75%;
+  font-weight: inherit;
+  margin-left: 0.05rem;
+  position: relative;
+}
+
+.footnotes {
+  font-size: 0.95rem; 
+}
+
+.footnotes .foot-block {
+  display: inline-block;
+  padding: 0 4rem 0 2rem;
+  margin-bottom: .8rem;
+  font-style: italic;
+}
+
+/*Bibliography styles */
+ol.bibliography {
+  list-style-type:none;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+/* Diplomatic editions */
+ins,
+.add {
+  color:#288828;
+  font-style: italic;
+}
+
+del,
+.delete {
+  text-decoration: line-through;
+  color: #AA3232;
+}
+
+u,
+.underline {
+  text-decoration: underline;
+}
+
+
+/*
+  Line layouts for prose-poetry and theater
+  To use these layouts you need to add the classes to your markdown or HTML lines.
+  (ex. "- {:.centered} hello!")
+*/
+
+li.centered {
+  text-align: center;
+}
+
+li.speaker,
+li.speakerGroup {
+  text-align: center;
+  padding-top: 1.2em;
+}
+
+li.speakerGroup {
+  margin-bottom: -1.6em;
+}
+
+/* To add an attribution, make sure to make a line with the attribution class */
+
+li.attribution {
+  text-align: right;
+  list-style: none;
+  padding: 0rem 1.5rem 0rem 2rem;
+  margin: 0 0 20px 0;
+  color: #454545;
+}
+
+li.prose {
+  list-style-position: inside;
+  margin-left: -1em;
+  text-indent: 0;
+}
+
+li.prose-indent {
+  text-indent: 2rem;
+}

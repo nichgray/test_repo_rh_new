@@ -1,0 +1,98 @@
+---
+layout: page
+---
+<div class="metadata-box">
+  <details open><!-- to start expanded: <details open> -->
+    <summary>
+      <h2>Metadata</h2>
+    </summary>
+    <div class="details-content">
+      <ul>
+        {% if page.book_title %}
+          <li><strong>Title</strong>: {{ page.book_title }}</li>
+        {% elsif page.title %}
+          <li><strong>Title</strong>: {{ page.title }}</li>
+        {% endif %}
+        {% if page.author %}
+          <li><strong>Author</strong>: {{ page.author }}</li>
+        {% endif %}
+        {% if page.book_editor %}
+          <li><strong>Editor</strong>: {{ page.book_editor }}</li>
+        {% endif %}
+        {% if page.publisher %}
+          <li><strong>Publisher</strong>: {{ page.publisher }}</li>
+        {% endif %}
+        {% if page.publication_place %}
+          <li><strong>Place of publication</strong>: {{ page.publication_place }}</li>
+        {% endif %}
+        {% if page.publication_date %}
+          <li><strong>Date of publication</strong>: 
+            {% if page.publication_date.size %} {% comment %} Tests if date is in format other than YYYY-MM-DD {% endcomment %}
+              {{ page.publication_date }}
+            {% else %}
+              {{ page.publication_date | date: "%B %e, %Y" }}
+            {% endif %}
+          </li>
+        {% endif %}
+        {% if page.pages %}
+          <li><strong>Pages</strong>: {{ page.pages }}</li>
+        {% endif %}
+        {% if page.annotations_by or page.file_edited_by or site.editor %}
+        <li class="about-this-edition"><h3>About the Digital Edition</h3>
+          <ul>
+            {% if page.annotations_by %}
+              <li><strong>Annotations by:</strong> {{ page.annotations_by | array_to_sentence_string }}</li>
+            {% endif %}
+            {% if page.file_edited_by %}
+              <li><strong>Edited by</strong>: {{ page.file_edited_by | array_to_sentence_string }}</li>
+            {% elsif site.editor %}
+              <li><strong>Edited by</strong>: {{ site.editor }}</li>
+            {% endif %}
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!-- {% assign chapters_only = site.pages | where: "type", "chapter" | sort_natural: "chapter_number" | sort_natural: "title" %}-->
+
+<div class="chapter-list">
+  <details open>
+    <summary>
+      <h2>View Individual Chapters</h2>
+    </summary>
+    <div class="details-content">
+      <ul>
+        <!-- Get files in items > books whose book_title match this file's book_title -->
+        {% assign this_book = page.book_title %}
+        {% assign this_book_only_chapters = site.pages | where_exp: "page", "page.book_title == this_book" | group_by: "chapter_number" %}
+        {% assign sorted_by_number = this_book_only_chapters | sort: "name" %}
+        {% for chapter_by_number in sorted_by_number %}
+          {% assign sorted_by_number_and_title = chapter_by_number.items | sort: "title" %}
+          {% for chapter in sorted_by_number_and_title %}
+            {% if chapter.url != page.url %}
+            <li>
+              <a href="{{ chapter.url | relative_url }}">
+                {{ chapter.title }}
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+  </details>
+</div>
+
+{{ content }}
+
+<div class="whole-book">
+  
+  {% for chapter in chapters_only %}
+  <div class="book-section">
+    <p class="individual-chapter-link"><a href="{{ chapter.url | relative_url }}">View chapter &raquo;</a></p>
+    {{ chapter.content | markdownify }}
+  </div>
+  {% endfor %}
+</div>

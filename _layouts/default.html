@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="layout_{{ page.layout | slugify }}">
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+
+      {% capture wrapper_class %}wrapper category-{{ page.category }}{% endcapture %}
+      <div class="{{wrapper_class}}">
+        
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

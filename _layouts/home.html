@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+
+<div class="home"> 
+
+  {%- if site.banner_image and site.banner_size == "full" -%}
+
+    <div class="banner-full">
+      <div class="banner-image">
+        <img src="{{ site.banner_image | relative_url }}" alt="{{ site.banner_alt_text }}" />
+      </div>
+      <div class="banner-text">
+        <h1 class="page-heading sr-only">{{ site.title | escape }}</h1>
+        {%- if site.description -%}
+        <div class="site-description">
+          {{ site.description }}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+    {{ content }}
+
+  {%- else if site.banner_image -%}
+
+    <div class="banner-half">
+      <div class="banner-image">
+        <img src="{{ site.banner_image | relative_url }}" alt="{{ site.banner_alt_text }}" />
+      </div>
+      <div class="banner-text">
+        <h1 class="page-heading sr-only">{{ site.title }}</h1>
+        {%- if site.description -%}
+        <div class="site-description">
+          {{ site.description }}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+    {{ content }}
+
+  {%- else -%}
+
+    <h1 class="page-heading">{{ site.title | strip_newlines }}</h1>
+    {%- if site.description -%}
+    <div class="site-description">
+      {{ site.description }}
+    </div>
+    {%- endif -%}
+    {{ content }}
+
+  {%- endif -%}
+
+</div>

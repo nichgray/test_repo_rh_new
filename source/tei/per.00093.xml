@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="per.00093">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Halcyon Days</title>
+            <title type="sub">electronic edition</title>
+            <author>Walt Whitman</author>
+            <editor role="contributing">Susan Belasco</editor>
+            <editor role="assistant">Elizabeth Lorang</editor>
+            <editor role="general">Ed Folsom</editor>
+            <editor role="general">Kenneth M. Price</editor>
+            <respStmt>
+               <resp>Transcription and encoding</resp>
+               <persName xml:id="el">Elizabeth Lorang</persName>
+               <persName xml:id="al">April Lambert</persName>
+               <persName xml:id="sb">Susan Belasco</persName>
+            </respStmt>
+            <sponsor>Center for Digital Research in the Humanities, University of Nebraska-Lincoln</sponsor>
+            <sponsor>University of Iowa</sponsor>
+            <funder>National Endowment for the Humanities</funder>
+         </titleStmt>
+         <editionStmt>
+            <edition>
+               <date>2014</date>
+            </edition>
+         </editionStmt>
+         <publicationStmt>
+            <distributor>The Walt Whitman Archive</distributor>
+            <address>
+               <addrLine>Center for Digital Research in the Humanities</addrLine>
+               <addrLine>319 Love Library</addrLine>
+               <addrLine>University of Nebraska-Lincoln</addrLine>
+               <addrLine>P.O. Box 884100</addrLine>
+               <addrLine>Lincoln, NE 68588-4100</addrLine>
+            </address>
+            <availability>
+               <p>The text of the original item is in the public domain.</p>
+               <p>The text encoding and textual annotations were created and/or prepared by the
+                     <title level="m">Walt Whitman Archive</title> and Susan Belasco and are
+                  licensed under a <ref target="http://creativecommons.org/licenses/by/4.0/">
+                     Creative Commons Attribution 4.0 International License </ref> (CC BY 4.0). Any
+                  reuse of these materials should credit the <title level="m">Walt Whitman
+                     Archive</title> and Susan Belasco.</p>
+            </availability>
+            <idno>per.00093</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <title level="a">Halcyon Days</title>
+               <title level="j">New York Herald</title>
+               <author>Walt Whitman</author>
+               <date when="1888-01-29">29 January 1888</date>
+               <biblScope unit="pages">12</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <classDecl>
+            <taxonomy>
+               <category><catDesc>poems</catDesc></category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <revisionDesc>
+         <change who="#el" when="2015-05-28">updated TEI header</change>
+         <change when="2014-12-03" who="#el">updated encoding of closer</change>
+         <change who="#el" when="2014-11-07">converted to P5</change>
+         <change who="#el #al" when="2007-03-21">proofread</change>
+         <change who="#el" when="2007-01-19">Added editorial note.</change>
+         <change who="#el" when="2006-03-14">transcribed and encoded</change>
+      </revisionDesc>
+   </teiHeader>
+   <text type="poems">
+      <body>
+         <lg>
+            <head type="main-authorial">HALCYON DAYS.<note type="editorial" resp="wwa" place="end" xml:id="n1">Reprinted in the "Sands
+               at Seventy Annex" to <hi rend="italic">Leaves of Grass</hi> (1888).</note></head>
+            <l>Not from successful love alone,</l>
+            <l>Nor wealth, nor honored middle age, nor <choice>
+                  <orig>vic- <lb/> tories</orig>
+                  <reg>victories</reg>
+               </choice> of politics or war.</l>
+            <l>But as life wanes, and all the turbulent passions <lb/> calm,</l>
+            <l>As gorgeous, vapory, silent hues cover the <choice>
+                  <orig>even- <lb/> ing</orig>
+                  <reg>evening</reg>
+               </choice> sky,</l>
+            <l>As softness, fulness, rest, suffuse the spirit and <lb/> frame like freshier,
+               balmier air;</l>
+            <l>As the days take on a mellower light, and the <lb/> apple at last hangs really
+               finished and <choice>
+                  <orig> in- <lb/> dolent </orig>
+                  <reg>indolent</reg>
+               </choice> ripe on the tree,</l>
+            <l>Then for the teeming quietest, happiest days of <lb/> all!</l>
+            <l>The brooding and blissful halcyon days!<note type="editorial" resp="wwa"
+               xml:id="n2" place="end">In December 1887, another poet's "Halcyon Days" appeared in the <hi
+                  rend="italic">New York Herald</hi>, though Whitman's poem and this earlier one
+               have little but their title in common. When Whitman revised the poem for inclusion
+               in "Sands at Seventy," he omitted the words "spirit and" in the fifth line.</note></l>
+            <closer>
+               <signed rend="right">— <hi rend="italic">Walt Whitman</hi>.</signed>
+            </closer>
+         </lg>
+      </body>
+   </text>
+</TEI>

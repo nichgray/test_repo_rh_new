@@ -1,0 +1,77 @@
+---
+layout: page
+---
+
+<div class="metadata-box">
+  {% comment %}
+    To load page with metadata box expanded, use <details open> 
+    To load page with metadata box closed, use <details>
+  {% endcomment %}
+  <details open>
+    <summary>
+      <h2>Metadata</h2>
+    </summary>
+    <div class="details-content">
+      <ul>
+        {% if page.poem_title %}
+          <li><strong>Title</strong>: {{ page.poem_title }}</li>
+        {% elsif page.title %}
+          <li><strong>Title</strong>: {{ page.title }}</li>
+        {% endif %}
+        {% if page.author %}
+          <li><strong>Author</strong>: {{ page.author }}</li>
+        {% endif %}
+        {% if page.publication_title %}
+          <li><strong>Publisher</strong>: {{ page.publication_title }}</li>
+        {% endif %}
+        {% if page.publication_place %}
+          <li><strong>Place of publication</strong>: {{ page.publication_place }}</li>
+        {% endif %}
+        {% if page.publication_date %}
+          <li><strong>Date of publication</strong>: 
+            {% if page.publication_date.size %} {% comment %} Tests if date is in format other than YYYY-MM-DD {% endcomment %}
+              {{ page.publication_date }}
+            {% else %}
+              {{ page.publication_date | date: "%B %e, %Y" }}
+            {% endif %}
+          </li>
+        {% endif %}
+        {% if page.pages %}
+          <li><strong>Pages</strong>: {{ page.pages }}</li>
+        {% endif %}
+        {% if page.annotations_by or page.file_edited_by or site.editor %}
+        <li>
+          <strong>Source file</strong>: <a href="{{site.baseurl}}/source/tei/{{page.document}}" target="_new">{{page.document}}</a> (TEI)
+        </li>
+        <li class="about-this-edition"><h3>About the Digital Edition</h3>
+          <ul>
+            {% if page.annotations_by %}
+              <li><strong>Annotations by:</strong> {{ page.annotations_by | array_to_sentence_string }}</li>
+            {% endif %}
+            {% if page.file_edited_by %}
+              <li><strong>Edited by</strong>: {{ page.file_edited_by | array_to_sentence_string }}</li>
+            {% elsif site.editor %}
+              <li><strong>Edited by</strong>: {{ site.editor }}</li>
+            {% endif %}
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+
+  </details>
+</div>
+
+<div>
+  {{ content }}
+</div>
+
+<article id="TEI"></article>
+
+<script src="{{site.baseurl}}/assets/js/CETEI.js"></script>
+<script>
+  var CETEIcean = new CETEI()
+  CETEIcean.getHTML5("{{site.baseurl}}/source/tei/{{page.document}}", function(data) {
+    document.getElementById("TEI").appendChild(data)
+  })
+</script>

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="chapter">
+
+{% include paginate_variables.html %}
+
+{% include paginate_links.html %}
+
+ 
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% include paginate_links.html %}
+
+</article>

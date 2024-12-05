@@ -1,0 +1,41 @@
+<div class="pagination-links">
+  <div>
+    {% if prev_i < 0 %}
+      <a class="grayed-out" disabled="true">
+        <span>Previous {{ page.type | capitalize }}</span>
+      </a>
+    {% else %}
+      <a href="{{ sorted_pages[prev_i].url | relative_url }}">
+        ⇦ <span>Previous {{ page.type | capitalize }}</span>
+      </a>
+    {% endif %}
+  </div>
+  <div>
+    {% if page.book_title %}
+      {% assign this_book = page.book_title %}
+      {% assign full_book = site.pages | where_exp: "page", "page.book_title == this_book" | where_exp: "page", "page.type == chapter" %}
+        {% for page in full_book %}
+          <a href="{{ page.url | relative_url }}">
+            {{ page.book_title }}
+          </a>
+        {% endfor %}
+      {% if page.book_title and page.chapter_number %}
+      <span class="separator">|</span>
+      {% endif %}
+    {% endif %}
+    {% if page.chapter_number %}
+      <span class="chapter-title">Chapter {{ page.chapter_number }}</span>{% endif %}{% if page.chapter_number and page.chapter_title %}: {% endif %}{% if page.chapter_title %}<span class="chapter-title">{{ page.chapter_title }}</span>
+    {% endif %} 
+  </div>
+  <div>
+    {% if num_of_pages > next_i %}
+      <a href="{{ sorted_pages[next_i].url | relative_url }}">
+          <span>Next {{ page.type | capitalize }}</span> ⇨
+      </a>
+    {% else %}
+      <a class="grayed-out" disabled="true">
+          <span>Next {{ page.type | capitalize }}</span>
+      </a>
+    {% endif %}
+  </div>
+</div>

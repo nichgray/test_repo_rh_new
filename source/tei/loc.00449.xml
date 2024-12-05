@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="loc.00449">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Thomas Jefferson Whitman to Louisa Van Velsor Whitman, 23 August 1868</title>
+            <title type="sub">electronic edition</title>
+            <author>Thomas Jefferson Whitman</author>
+            <editor>Dennis Berthold</editor>
+            <editor>Kenneth M. Price</editor>
+            <respStmt>
+               <resp>Transcription and encoding</resp>
+               <persName xml:id="el">Elizabeth Lorang</persName>
+               <persName xml:id="kk">Kathryn Kruger</persName>
+               <persName xml:id="al">April Lambert</persName>
+            </respStmt>
+            <sponsor>Center for Digital Research in the Humanities, University of Nebraska-Lincoln</sponsor>
+            <sponsor>University of Iowa</sponsor>
+            <funder>National Historical Publications and Records Commission</funder>
+         </titleStmt>
+         <editionStmt>
+            <edition>
+               <date>2008</date>
+            </edition>
+         </editionStmt>
+         <publicationStmt>
+            <distributor>The Walt Whitman Archive</distributor>
+            <address>
+               <addrLine>Center for Digital Research in the Humanities</addrLine>
+               <addrLine>319 Love Library</addrLine>
+               <addrLine>University of Nebraska-Lincoln</addrLine>
+               <addrLine>P.O. Box 884100</addrLine>
+               <addrLine>Lincoln, NE 68588-4100</addrLine>
+            </address>
+            <availability>
+               <p>Copyright © 2008 by Ed Folsom and Kenneth M. Price, all rights reserved. Items in the Archive may be shared in accordance with the Fair Use provisions of U.S. copyright law. Redistribution or republication on other terms, in any medium, requires express written consent from the editors and advance notification of the publisher, Center for Digital Research in the Humanities. Permission to reproduce the graphic images in this archive has been granted by the owners of the originals for this publication only.</p>
+            </availability>
+         <idno>loc.00449</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <author>Thomas Jefferson Whitman</author>
+               <title>Thomas Jefferson Whitman  to Louisa Van Velsor Whitman, 23 August 1868</title>
+               <date when="1868-08-23">August 23, 1868</date>
+               <orgName xml:id="loc">Charles E. Feinberg Collection of the Papers of Walt Whitman, 1839–1919, Library of Congress, Washington, D.C.</orgName>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <classDecl>
+            <taxonomy>
+               <category><catDesc>correspondence</catDesc></category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <profileDesc>
+         <particDesc>
+            <person role="sender">
+               <persName key="Whitman, Thomas Jefferson">Thomas Jefferson Whitman</persName>
+            </person>
+            <person role="recipient">
+               <persName key="Whitman, Louisa Van Velsor">Louisa Van Velsor Whitman</persName>
+            </person>
+         </particDesc>
+      </profileDesc>
+      <revisionDesc>
+         <change who="#el" when="2013-11-22">converted to P5</change>
+         <change who="#el" when="2008-07-21">updated TEI header</change>
+         <change who="#kk" when="2008-04-01">checked and proofed</change>
+         <change who="#el" when="2006-11-27">added figures</change>
+         <change who="#al" when="2006-10-03">Transcribed, Encoded</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+            <opener>
+               <dateline rend="right">
+                  <name type="place">St. Louis,</name>
+                  <date when="1868-08-23">August 23rd 1868</date>
+               </dateline>
+               <salute>My dear Mother,</salute>
+            </opener>
+            <p>Having a half hour to spare I thought I could not better employ it than in writing you—We are getting along pretty well—Mattie has gained a great deal in the last week—although to-day she is not as well as she was a day or two ago yet she can go around without a cane—and without limping much—Hattie and Jessie are well as can be—Jessie is getting fat again—and Hattie looks remarkably well—indeed I think St Louis agrees with her if it dont with the rest of us—</p>
+            <p>Mat has got a pretty good girl now—not the best—but good as they run—as soon as she can get around though and see to things herself I suppose matters will go better</p>
+            <p>Do you see or read anything about a toy called "Planchett"  There is an article in "Lippencotts" Mag for August on it—Davis bought one a few days ago and we tried it but it woul'd[nt] go for us at all—Yesterday a little daughter of a neighbor came in and Mattie and she tried it and it commenced to write answers to all questions like the devil—The thing is a little piece of black walnut abt 7" by 8"—heart shaped and abt ¼" thick—you lay a sheet of paper on a table and set this thing on it and then sit down and put the tips of your fingers on the top of the wood—in a few minutes the wheels begin to roll and the pencil to mark on the paper—then you ask questions and the "toy" will write answers  I went home last evening and found that they were all in a high state of excitement from the fact that they (Mat and this little girl) had got it going and lots of questions answered—Mat asked it if you would come out and see us this fall and it wrote "Doubtful" (it makes a flourish like this at the end of every sentence)  To a question of who would be next President it wrote "Grant"—then they asked it why Grant would be President and it wrote "Because"—lots of other questions were answered in the same way—you would laugh to see the excitement and expectancy when an answer's abt half written</p>
+            <p>I had a letter from McNamee a few days ago—he told me that George had been sent down to Florence for a short time—has he returned yet—I was glad that the draft came all right—and by the way is that car stable yet on the lots opposite my lot in Flatbush avenue—tell George to look when he goes in that neighborhood  If they should clear that out I dont know but what it would be a good idea to build on that lot one of these days</p>
+            <p>Mat will write you soon—everything is going abt the same as usual with us—I dont ever hear from Walt—I suppose he is well however—has he been home lately—Love to George Ed and all—write when you can—affectionately</p>
+            <closer rend="right">
+               <signed>Jeff</signed>
+            </closer>
+      </body>
+   </text>
+</TEI>

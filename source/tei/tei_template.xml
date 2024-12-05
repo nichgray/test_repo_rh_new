@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="sampleID001">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Sample Title</title>
+            <title type="sub">electronic edition</title>
+            <author sameAs="#aa">An Author</author>
+            <editor>An Editor</editor>
+            <respStmt>
+               <resp>Transcription and encoding</resp>
+               <persName xml:id="at">A Transcriber</persName>
+            </respStmt>
+            <sponsor></sponsor>
+            <funder></funder>
+         </titleStmt>
+         <editionStmt>
+            <edition>
+               <date>2024</date>
+            </edition>
+         </editionStmt>
+         <publicationStmt>
+            <distributor>Recovery Hub for American Women Writers</distributor>
+            <address>
+               <addrLine></addrLine>
+               <addrLine></addrLine>
+               <addrLine></addrLine>
+            </address>
+            <availability>
+               <licence>https://creativecommons.org/licenses/by-nc-sa/4.0/</licence>
+               <p>The base text of the original item is in the public domain. The text encoding and editorial notes were created and/or prepared by the editor and are licensed under a
+                  <ref target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</ref>
+                  (CC BY-NC-SA 4.0).</p>
+            </availability>
+            <idno>sampleID001</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <author sameAs="#aa"/>
+               <date when="1872-04-12">April 12, 1872</date>
+               <title level="a"></title>
+               <title level="j"></title>
+               <biblScope unit="pages"></biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <classDecl>
+            <taxonomy>
+               <category><catDesc>correspondence</catDesc></category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2024-12-04" who="#at">transcribed, encoded</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <pb facs="image.jpg"/>
+         <p>Some text.</p>
+         <pb facs="image2.jpg"/>
+         <p>Some more text.</p>
+      </body>
+   </text>
+</TEI>
