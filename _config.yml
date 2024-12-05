@@ -4,8 +4,8 @@
 
 ### Site Structure
 
-baseurl: "/edition_base" # the subpath of your site
-url: "https://recoveryhub.github.io/" # should not change for Recovery Hub projects
+baseurl: "/test_repo_rh_new" # the subpath of your site
+url: "https://nichgray.github.io/" # should not change for Recovery Hub projects
 
 ### Site Title
 
@@ -31,18 +31,11 @@ description: >
 
 ### Banner image
 
-banner_image: assets/images/recovery-hub-banner.jpg
-banner_alt_text: Recovery Hub of American Women Writers with quill icon and pages of a book in the background
-banner_size: "half" # Available values: "full" (full-width) or "half". Defaults to half if left blank.
-
 ### Navigation
 
 # If you want to link only specific pages in your header, use this and add the path to the pages
 # in order as they should show up.
 header_pages:
-  - "items/books/book.md"
-  - "items/periodicals/periodical.md"
-  - "items/poems/poem.md"
   - "about.md"
   - "docs/all-pages.html"
 
@@ -50,58 +43,31 @@ header_pages:
 
 author:
   # "name" can contain one or multiple names and will be listed in the footer by default
-  name: PIs Gloría Kahlo and Murasaki Shikibu
-  email: recoveryhub@siue.edu
-  institution: Southern Illinois University Edwardsville
+  name: PIs Steven Tyler
+  email: someemail
+  institution: Some Institution
 
 ### Privacy Notice
 
-privacy_notice: https://www.siue.edu/web-privacy-notice/
+#privacy_notice: https://www.siue.edu/web-privacy-notice/
 
 ### Social Accounts
 
-facebook_username: AWWrecoveryhub
-twitter_username: AWWRecoveryHub
-instagram_username: awwrecoveryhub
-github_username:  recoveryhub
+#facebook_username: AWWrecoveryhub
+#twitter_username: AWWRecoveryHub
+#instagram_username: awwrecoveryhub
+#github_username:  recoveryhub
 
 ### Sponsors / Organization Logos
 
 # You can add/edit/remove sponsors below, or override the 
 # the HTML in the footer template _includes/footer.html 
 
-sponsors:
-  # copy-paste the following 4 lines for each sponsor
-  - sponsor:
-    name: Southern Illinois University Edwardsville
-    link: https://www.siue.edu/
-    logo_path: assets/images/siue.png
-
-  - sponsor:
-    name: St. Catherine University
-    link: https://www.stkate.edu/
-    logo_path: assets/images/stkate.png
-
-  - sponsor: 
-    name: National Endowment for the Humanities
-    link: https://www.neh.gov/
-    logo_path: assets/images/neh.webp
-
-  - sponsor:
-    name: The IRIS Center at SIUE
-    link: https://iris.siue.edu/
-    logo_path: assets/images/iris.png
-    
-  - sponsor: 
-    name: University of Nebraska–Lincoln
-    link: https://www.unl.edu/
-    logo_path: assets/images/unl.png
-
 # Site Setup / Defaults
 
 # If all pages in this edition have the same editor(s), you can list them here.
 # Otherwise, you can include the editor(s) in the metadata for each file.
-editor: Gloría Kahlo and Murasaki Shikibu
+editor: Steven Tyler
 
 ## Categories 
 
